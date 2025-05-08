@@ -10,7 +10,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['role']) || $_SESSION['rol
 }
 
 // Database connection
-$connection = new mysqli("localhost", "root", "", "mfj_db");
+$connection = new mysqli("localhost", "root", "", "mfjdb");
 if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 }
