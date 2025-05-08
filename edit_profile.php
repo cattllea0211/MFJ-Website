@@ -1,9 +1,9 @@
-<?php
+l<?php
 session_start();
 
 // Check if user is logged in
 if (!isset($_SESSION['id'])) {
-    header('Location: login.php');
+    header('Location: employee_login.php');
     exit();
 }
 
@@ -18,7 +18,7 @@ if ($_SESSION['id'] != $id && $_SESSION['role'] != 'admin') {
 
 // Database connection (PDO)
 $host = 'localhost';
-$dbname = 'mfj_db';
+$dbname = 'mfjdb';
 $db_username = 'root';
 $db_password = '';
 
