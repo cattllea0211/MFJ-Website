@@ -6,7 +6,7 @@ session_start();
 $username = $_SESSION['username'];
 
 // Database connection
-$conn = new mysqli('localhost', 'root', '', 'mfj_db');
+$conn = new mysqli('localhost', 'root', '', 'mfjdb');
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
