@@ -4,7 +4,7 @@ session_start();
 $servername = "localhost"; 
 $username = "root"; 
 $password = "";
-$dbname = "mfj_db"; 
+$dbname = "mfjdb"; 
 
 
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
