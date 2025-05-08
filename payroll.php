@@ -529,7 +529,7 @@
                 </thead>
                 <tbody>
                     <?php
-                    $conn = new mysqli('localhost', 'root', '', 'mfj_db');
+                    $conn = new mysqli('localhost', 'root', '', 'mfjdb');
                     $result = $conn->query("SELECT id, name FROM employees");
 
                     for ($i = 1; $i <= 8; $i++) {
@@ -649,7 +649,7 @@
         function fetchBasicRate(employeeId, row) {
             if (!employeeId) return;
 
-            fetch(`/MFJ/get_employee_rate.php?employee_id=${employeeId}`)
+            fetch(`/get_employee_rate.php?employee_id=${employeeId}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.rate_per_day) {
@@ -759,7 +759,7 @@
                 return;
             }
 
-            fetch('/MFJ/save_payroll.php', {
+            fetch('/save_payroll.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
