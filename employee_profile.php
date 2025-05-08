@@ -3,7 +3,7 @@ session_start();
 
 // Check if user is logged in
 if (!isset($_SESSION['id'])) {
-    header('Location: login.php');
+    header('Location: employee_login.php');
     exit();
 }
 
@@ -12,7 +12,7 @@ $username = $_SESSION['username']; // (optional use)
 
 // Database connection (PDO)
 $host = 'localhost';
-$dbname = 'mfj_db';   // <-- your database name
+$dbname = 'mfjdb';   // <-- your database name
 $db_username = 'root'; // <-- your database username
 $db_password = '';     // <-- your database password
 
