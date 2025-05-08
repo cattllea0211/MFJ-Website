@@ -13,7 +13,7 @@ if (isset($_GET['logout']) && $_GET['logout'] == true) {
     header("Pragma: no-cache");
 
 
-    header("Location: /MFJ/admin_login.php");
+    header("Location: /admin_login.php");
     exit();
 }
 
@@ -21,7 +21,7 @@ if (isset($_GET['logout']) && $_GET['logout'] == true) {
 function validateAdminSession() {
     if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
      
-        header("Location: /MFJ/admin_login.php");
+        header("Location: /admin_login.php");
         exit();
     }
 }
