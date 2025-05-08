@@ -2,7 +2,7 @@
 
 $dbConfig = [
     'host' => 'localhost',
-    'dbname' => 'mfj_db',
+    'dbname' => 'mfjdb',
     'username' => 'root',
     'password' => ''
 ];
