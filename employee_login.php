@@ -386,7 +386,7 @@ body {
             <div class="footer">
                 <div class="footer-divider"></div>
                 <p>Don't have an account?</p>
-                <a href="/MFJ/employee_register.php" class="btn signup-btn" style="display: inline-block; margin-top: 0.75rem;">Create Account</a>
+                <a href="/employee_register.php" class="btn signup-btn" style="display: inline-block; margin-top: 0.75rem;">Create Account</a>
             </div>
         </div>
     </div>
