@@ -7,7 +7,7 @@ if (!isset($_SESSION['id'])) {
 
 $user_id = $_SESSION['id'];
 
-$pdo = new PDO("mysql:host=localhost;dbname=mfj_db", "root", "");
+$pdo = new PDO("mysql:host=localhost;dbname=mfjdb", "root", "");
 
 // Fetch the user's name
 $name_stmt = $pdo->prepare("SELECT name FROM employees WHERE id = :id");
