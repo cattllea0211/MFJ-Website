@@ -2,7 +2,7 @@
 session_start();
 
 $host = 'localhost';
-$dbname = 'mfj_db';
+$dbname = 'mfjdb';
 $username = 'root';
 $password = '';
 
