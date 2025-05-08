@@ -19,7 +19,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['role']) || $_SESSION['rol
 
 // Database connection
 $host = 'localhost';
-$dbname = 'mfj_db';
+$dbname = 'mfjdb';
 $username = 'root';
 $password = '';
 
