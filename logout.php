@@ -6,6 +6,6 @@ session_start();
 session_destroy();
 
 
-header("Location: /MFJ/index.php");
+header("Location: /index.php");
 exit();
 ?>
