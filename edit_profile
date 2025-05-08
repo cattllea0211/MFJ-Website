@@ -1,0 +1,39 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['id'])) {
+    http_response_code(401);
+    echo "Unauthorized.";
+    exit();
+}
+
+$id = $_SESSION['id'];
+
+$host = 'localhost';
+$dbname = 'mfj_db';
+$username = 'root';
+$password = '';
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $sql = "UPDATE employees 
+            SET name = :name, email = :email, phone = :phone, address = :address
+            WHERE id = :id";
+    
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':name', $_POST['name']);
+    $stmt->bindParam(':email', $_POST['email']);
+    $stmt->bindParam(':phone', $_POST['phone']);
+    $stmt->bindParam(':address', $_POST['address']);
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+    $stmt->execute();
+
+    echo "Profile updated successfully!";
+} catch (PDOException $e) {
+    http_response_code(500);
+    echo "Error updating profile: " . $e->getMessage();
+}
+?>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Program</title>
+</head>
+<body>
+    <h1>Welcome to the Greeting Program!</h1>
+
+    <form method="post" action="">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" required>
+        <input type="submit" value="Greet Me!">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Get the name from the form input
+        $name = htmlspecialchars($_POST['name']);
+        // Display a personalized greeting
+        echo "<h2>Hello, $name! Nice to meet you!</h2>";
+    }
+    ?>
+</body>
+</html>
