@@ -175,7 +175,7 @@
         }
 
  .hero {
-          background: linear-gradient(to right, rgba(15, 23, 42, 0.8), rgba(30, 58, 138, 0.7)), url('/MFJ/modernbg1.jpg');
+          background: linear-gradient(to right, rgba(15, 23, 42, 0.8), rgba(30, 58, 138, 0.7)), url('/modernbg1.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
