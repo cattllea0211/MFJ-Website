@@ -10,7 +10,7 @@ if (!isset($_SESSION['username'])) {
 // Database configuration
 $dbConfig = [
     'host' => 'localhost',
-    'dbname' => 'mfj_db',
+    'dbname' => 'mfjdb',
     'username' => 'root',
     'password' => ''
 ];
