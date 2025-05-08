@@ -8,7 +8,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['appointment_data'])) {
 }
 
 $host = 'localhost';
-$dbname = 'mfj_db';
+$dbname = 'mfjdb';
 $username = 'root';
 $password = '';
 
