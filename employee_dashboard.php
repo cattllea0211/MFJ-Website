@@ -3,7 +3,7 @@ session_start();
 
 if (!isset($_SESSION['id'])) {
  
-    header("Location: login.php");
+    header("Location: employee_login.php");
     exit; 
 }
 
@@ -12,7 +12,7 @@ $id = $_SESSION['id'];
 $username = $_SESSION['username']; 
 
 
-$conn = new mysqli('localhost', 'root', '', 'mfj_db');
+$conn = new mysqli('localhost', 'root', '', 'mfjdb');
 
 
 if ($conn->connect_error) {
