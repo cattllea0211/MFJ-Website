@@ -326,17 +326,17 @@
 <body>
         <div class="navbar">
         <div class="logo">
-            <img src="/MFJ/logo.png" alt="Company Logo">
+            <img src="/logo.png" alt="Company Logo">
             MFJ Airconditioning Supply & Services
         </div>
 
         <ul class="menu">
-            <li><a href="/MFJ/client_dashboard.php"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="/MFJ/update_profile.php"><i class="fas fa-user-edit"></i> Update Profile</a></li>
-            <li><a href="/MFJ/view_transaction.php"><i class="fas fa-calendar-alt"></i> Appointments</a></li>
-            <li><a href="/MFJ/client_orders.php"><i class="fas fa-shopping-cart"></i> Orders</a></li>
-            <li><a href="/MFJ/submit_feedback.php"><i class="fas fa-comment-dots"></i> Feedback</a></li>
-           <li><a href="/MFJ/logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            <li><a href="/client_dashboard.php"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="/update_profile.php"><i class="fas fa-user-edit"></i> Update Profile</a></li>
+            <li><a href="/view_transaction.php"><i class="fas fa-calendar-alt"></i> Appointments</a></li>
+            <li><a href="/client_orders.php"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+            <li><a href="/submit_feedback.php"><i class="fas fa-comment-dots"></i> Feedback</a></li>
+           <li><a href="/logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
 
         </ul>
     </div>
