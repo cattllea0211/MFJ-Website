@@ -9,7 +9,7 @@ $username = $_SESSION['username'];
 
 // Database connection
 $host = "localhost";
-$dbname = "mfj_db";
+$dbname = "mfjdb";
 $username_db = "root";
 $password = "";
 
