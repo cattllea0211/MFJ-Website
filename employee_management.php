@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root"; 
 $password = ""; 
-$dbname = "mfj_db"; 
+$dbname = "mfjdb"; 
 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -472,39 +472,39 @@ $conn->close();
             <ul class="nav-menu">
                 <li class="nav-section">Main</li>
                 <li class="nav-item">
-                    <a href="/MFJ/admin_dashboard.php" class="nav-link active">
+                    <a href="/admin_dashboard.php" class="nav-link active">
                         <i class="fas fa-tachometer-alt nav-icon"></i>
                         <span class="nav-text">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-section">Management</li>
                 <li class="nav-item">
-                    <a href="/MFJ/manage_products.php" class="nav-link">
+                    <a href="/manage_products.php" class="nav-link">
                        <i class="fas fa-box nav-icon"></i>
                         <span class="nav-text">Products</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/MFJ/manage_services.php" class="nav-link">
+                    <a href="/manage_services.php" class="nav-link">
                         <i class="fas fa-calendar-alt nav-icon"></i>
                         <span class="nav-text">Appointments</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/MFJ/admin_calendar.php" class="nav-link">
+                    <a href="/admin_calendar.php" class="nav-link">
                         <i class="fas fa-calendar-alt nav-icon"></i>
                         <span class="nav-text">Calendar</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/MFJ/manage_employee.php" class="nav-link">
+                    <a href="/manage_employee.php" class="nav-link">
                         <i class="fas fa-id-card nav-icon"></i>
                         <span class="nav-text">Employees</span>
                     </a>
                 </li>
                 
                 <li class="nav-item" style="margin-top: auto;">
-                    <a href="/MFJ/index.php?logout=true" class="nav-link">
+                    <a href="/index.php?logout=true" class="nav-link">
                         <i class="fas fa-sign-out-alt nav-icon"></i>
                         <span class="nav-text">Logout</span>
                     </a>
@@ -529,7 +529,7 @@ $conn->close();
             <div class="error"><?php echo $error; ?></div>
         <?php endif; ?>
 
-        <form action="/MFJ/employee_management.php" method="POST" enctype="multipart/form-data">
+        <form action="/employee_management.php" method="POST" enctype="multipart/form-data">
             <!-- Personal Information -->
             <div class="form-card">
                 <div class="card-header">
