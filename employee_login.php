@@ -81,7 +81,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
 body {
-    background: linear-gradient(135deg, #E1F5FE 0%, #D1C4E9 100%);
+     background: linear-gradient(to bottom, #f0f8ff, #e6e6fa); /* Light blue to lavender gradient */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
     color: var(--text-primary);
     position: relative;
     min-height: 100vh;
