@@ -883,7 +883,7 @@ $eventsJson = json_encode($events);
                             <button id="day-view">Day</button>
                             <button id="list-view">List</button>
                         </div>
-                        <a href="/manager_add_service.php" class="btn btn-primary">
+                        <a href="manager_add_service.php" class="btn btn-primary">
                             <i class="fas fa-plus me-2"></i>Add Service
                         </a>
                     </div>
