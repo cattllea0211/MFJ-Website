@@ -158,7 +158,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <style>
         /* Custom styles for wider layout */
         .profile-container {
-            max-width: 1800px;
+            max-width: 2200px;
         }
         
         @media (min-width: 1024px) {
