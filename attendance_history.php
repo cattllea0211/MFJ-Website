@@ -37,7 +37,7 @@ $attendance_records = $stmt->fetchAll(PDO::FETCH_ASSOC);
             theme: {
                 extend: {
                     colors: {
-                        'brand-blue': '#4361ee',
+                        'brand-teal': '#1B7F97', /* MFJ teal color from first image */
                         'brand-green': '#10b981',
                         'brand-gray': '#f8fafc',
                         'brand-dark': '#1e293b'
@@ -62,18 +62,19 @@ $attendance_records = $stmt->fetchAll(PDO::FETCH_ASSOC);
         .table-container {
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
         }
+        /* Changed the header gradient to match the teal color from first image */
         .header-gradient {
-            background-image: linear-gradient(to right, #4361ee, #3a86ff);
+            background-color: #1B7F97; /* Solid teal color */
         }
         .table-header {
-            background-image: linear-gradient(to right, #10b981, #059669);
+            background-color: #10b981; /* Kept green for table header */
         }
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4">
     <div class="w-full max-w-6xl glass-effect shadow-2xl rounded-3xl overflow-hidden">
-<div class="header-gradient text-white p-6 flex flex-col sm:flex-row sm:justify-between gap-4 sm:items-center">
-<div class="flex flex-col sm:flex-row items-start sm:items-center sm:space-x-4 space-y-2 sm:space-y-0">
+        <div class="header-gradient text-white p-6 flex flex-col sm:flex-row sm:justify-between gap-4 sm:items-center">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center sm:space-x-4 space-y-2 sm:space-y-0">
                 <a href="employee_dashboard.php" class="bg-white/20 hover:bg-white/30 p-2 rounded-full transition transform hover:scale-105">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -83,7 +84,7 @@ $attendance_records = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div class="flex items-center space-x-4">
                 <span class="text-lg">Welcome, <?php echo htmlspecialchars($name); ?></span>
-                <a href="logout.php" class="bg-white text-brand-blue px-5 py-2 rounded-lg hover:bg-opacity-90 transition transform hover:scale-105 font-medium">
+                <a href="logout.php" class="bg-white text-brand-teal px-5 py-2 rounded-lg hover:bg-opacity-90 transition transform hover:scale-105 font-medium">
                     Logout
                 </a>
             </div>
@@ -99,7 +100,7 @@ $attendance_records = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             <?php else: ?>
                 <div class="overflow-x-auto table-container rounded-xl">
-<table class="w-full min-w-[500px] rounded-xl overflow-hidden border-collapse text-sm sm:text-base">
+                    <table class="w-full min-w-[500px] rounded-xl overflow-hidden border-collapse text-sm sm:text-base">
                         <thead class="table-header text-white">
                             <tr>
                                 <th class="px-6 py-4 text-left font-semibold">Attendance Date</th>
@@ -121,7 +122,7 @@ $attendance_records = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php endif; ?>
         </div>
         <div class="px-8 py-6 text-center text-brand-dark/60 text-sm">
-            <p>© 2025 Company Attendance System | All Rights Reserved</p>
+            <p>© 2025 MFJ Air Conditioning Supply & Services | All Rights Reserved</p>
         </div>
     </div>
 </body>
