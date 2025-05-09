@@ -257,11 +257,11 @@ function calculateDaysLeft($scheduledDate) {
         </div>
         <?php unset($_SESSION['completion_error']); ?>
     <?php endif; ?>
-<div class="w-full max-w-4xl bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl z-10 overflow-hidden animate-fade-in-up border border-[#1d7691]">
+        <div class="bg-[#1d7691] p-6 flex justify-between items-center rounded-t-3xl shadow-md">
     <div class="bg-[#1d7691] p-6 flex justify-between items-center rounded-t-3xl shadow-md">
 
             <div class="flex items-center space-x-4">
-                <a href="job_assignment.php" class="text-white hover:bg-indigo-600 p-2 rounded-full transition">
+                <a href="job_assignment.php" class="text-white hover:bg-teal-600 p-2 rounded-full transition">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                     </svg>
