@@ -263,82 +263,81 @@ function calculateDaysLeft($scheduledDate) {
             pointer-events: auto !important;
             background: white; /* optional for visibility */
         }
-            .button-container {
-      text-align: center;
-    }
-    
-    .complete-button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      font-size: 12px;
-      font-weight: 600;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    
-    .complete-button:hover {
-      background-color: #3e8e41;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-    }
-    
-    .complete-button:active {
-      transform: translateY(1px);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    
-    .icon {
-      display: inline-block;
-      width: 18px;
-      height: 18px;
-    }
-    
-    /* Alternative buttons */
-    .button-options {
-      display: flex;
-      gap: 20px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    
-    .blue-button {
-      background-color: #2196F3;
-    }
-    
-    .blue-button:hover {
-      background-color: #0d8bf2;
-    }
-    
-    .purple-button {
-      background-color: #673AB7;
-    }
-    
-    .purple-button:hover {
-      background-color: #5e35b1;
-    }
-    
-    .outlined-button {
-      background-color: transparent;
-      color: #4CAF50;
-      border: 2px solid #4CAF50;
-    }
-    
-    .outlined-button:hover {
-      background-color: rgba(76, 175, 80, 0.1);
-    }
-    
-    .rounded-button {
-      border-radius: 50px;
-    }
-
+        .button-container {
+          text-align: center;
+        }
+        
+        .complete-button {
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          padding: 10px 15px;
+          font-size: 12px;
+          font-weight: 600;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+        }
+        
+        .complete-button:hover {
+          background-color: #3e8e41;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .complete-button:active {
+          transform: translateY(1px);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .icon {
+          display: inline-block;
+          width: 18px;
+          height: 18px;
+        }
+        
+        /* Alternative buttons */
+        .button-options {
+          display: flex;
+          gap: 20px;
+          margin-top: 40px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        
+        .blue-button {
+          background-color: #2196F3;
+        }
+        
+        .blue-button:hover {
+          background-color: #0d8bf2;
+        }
+        
+        .purple-button {
+          background-color: #673AB7;
+        }
+        
+        .purple-button:hover {
+          background-color: #5e35b1;
+        }
+        
+        .outlined-button {
+          background-color: transparent;
+          color: #4CAF50;
+          border: 2px solid #4CAF50;
+        }
+        
+        .outlined-button:hover {
+          background-color: rgba(76, 175, 80, 0.1);
+        }
+        
+        .rounded-button {
+          border-radius: 50px;
+        }
 
         /* Fix for small screens */
         @media (max-width: 640px) {
@@ -372,7 +371,6 @@ function calculateDaysLeft($scheduledDate) {
                 width: auto;
               }
         }
-
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
@@ -380,237 +378,199 @@ function calculateDaysLeft($scheduledDate) {
     <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/symphony.png')] opacity-5 z-0"></div>
 
     <!-- Toast notifications -->
-    <?php if (isset($_SESSION['completion_success'])): ?>
-        <div id="success-toast" class="toast flex items-center p-4 mb-4 text-green-800 rounded-lg bg-green-50 shadow-lg" role="alert">
-            <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg">
-                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                </svg>
-            </div>
-<div class="ml-3 text-xs sm:text-sm font-medium">
-                Job marked as complete successfully! The admin will validate your submission.
-            </div>
-            <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8" data-dismiss-target="#success-toast" aria-label="Close">
-                <span class="sr-only">Close</span>
-                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                </svg>
-            </button>
+    <div id="success-toast" class="toast flex items-center p-4 mb-4 text-green-800 rounded-lg bg-green-50 shadow-lg hidden" role="alert">
+        <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+            </svg>
         </div>
-        <?php unset($_SESSION['completion_success']); ?>
-    <?php endif; ?>
-
-    <?php if (isset($_SESSION['time_recorded'])): ?>
-        <div id="time-toast" class="toast flex items-center p-4 mb-4 text-blue-800 rounded-lg bg-blue-50 shadow-lg" role="alert">
-            <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-blue-500 bg-blue-100 rounded-lg">
-                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                </svg>
-            </div>
-            <div class="ml-3 text-sm font-medium">
-                Time recorded successfully!
-            </div>
-            <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-blue-50 text-blue-500 rounded-lg focus:ring-2 focus:ring-blue-400 p-1.5 hover:bg-blue-200 inline-flex items-center justify-center h-8 w-8" data-dismiss-target="#time-toast" aria-label="Close">
-                <span class="sr-only">Close</span>
-                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                </svg>
-            </button>
+        <div class="ml-3 text-xs sm:text-sm font-medium">
+            Job marked as complete successfully! The admin will validate your submission.
         </div>
-        <?php unset($_SESSION['time_recorded']); ?>
-    <?php endif; ?>
+        <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8" data-dismiss-target="#success-toast" aria-label="Close">
+            <span class="sr-only">Close</span>
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+            </svg>
+        </button>
+    </div>
 
     <div class="w-full max-w-[1600px] h-[90vh] bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl z-10 overflow-hidden flex flex-col animate-fade-in-up border border-gray-100">
 
-        <div class="bg-gradient-to-r from-indigo-500 to-purple-600 p-6 flex justify-between items-center rounded-t-3xl shadow-md">
+        <!-- Teal header like in the second image -->
+        <div class="bg-[#1d7691] p-6 flex justify-between items-center rounded-t-3xl shadow-md">
             <div class="flex items-center space-x-4">
-                <a href="employee_dashboard.php" class="text-white hover:bg-indigo-600 p-2 rounded-full transition">
+                <a href="employee_dashboard.php" class="text-white hover:bg-teal-600 p-2 rounded-full transition">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                     </svg>
                 </a>
-<h1 class="text-xl sm:text-2xl font-semibold text-white">Job Assignments</h1>
+                <h1 class="text-xl sm:text-2xl font-semibold text-white">Job Assignments</h1>
             </div>
             <div class="text-white text-sm font-light">
-                Welcome, <span class="font-medium"><?php echo htmlspecialchars($name); ?></span>
+                Welcome, <span class="font-medium">Athena Dizon</span>
             </div>
         </div>
 
-<div class="flex flex-col lg:flex-row flex-1 overflow-hidden">
+        <div class="flex flex-col lg:flex-row flex-1 overflow-hidden">
             <!-- Main content area -->
-           <div class="flex-1 p-6 overflow-y-auto">
-    <?php 
-    // SPLIT JOBS INTO PENDING AND COMPLETED
-    $pending_jobs = [];
-    $completed_jobs = [];
-
-    foreach ($jobs as $job) {
-        if ($job['evaluation_status'] === 'Evaluated') {
-            $completed_jobs[] = $job;
-        } else {
-            $pending_jobs[] = $job;
-        }
-    }
-    ?>
-
-    <?php if (empty($pending_jobs) && empty($completed_jobs)): ?>
-        <div class="bg-indigo-50 border border-indigo-300 text-indigo-700 px-6 py-4 rounded text-lg shadow">
-            <span>No job assignments found for you.</span>
-        </div>
-    <?php else: ?>
-
-        <?php if (!empty($pending_jobs)): ?>
-<h2 class="text-lg sm:text-xl font-semibold text-gray-800 mb-4">
-Current Job Assignments</h2>
-<div class="overflow-x-auto w-full mb-10">
-                <table class="min-w-full text-sm text-left text-gray-700 border-separate border-spacing-y-2">
-                    <thead>
-                        <tr class="text-xs text-indigo-800 uppercase tracking-wide">
-                            <th class="px-4 py-3 bg-indigo-100 rounded-l-xl">Service Type</th>
-                            <th class="px-4 py-3 bg-indigo-100">Duration</th>
-                            <th class="px-4 py-3 bg-indigo-100">Price</th>
-                            <th class="px-4 py-3 bg-indigo-100">Scheduled Date</th>
-                            <th class="px-4 py-3 bg-indigo-100">Scheduled Time</th>
-                            <th class="px-4 py-3 bg-indigo-100">Days Left</th>
-                            <th class="px-4 py-3 bg-indigo-100">Client Name</th>
-                            <th class="px-4 py-3 bg-indigo-100">Time Finished</th>
-                            <th class="px-4 py-3 bg-indigo-100">Overtime (hrs)</th>
-                            <th class="px-4 py-3 bg-indigo-100">Action</th>
-                            <th class="px-4 py-3 bg-indigo-100 rounded-r-xl">Evaluation Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($pending_jobs as $index => $job): ?>
-                            <tr class="bg-white shadow-sm hover:shadow-md transition duration-200 rounded-xl" style="animation: fadeInUp 0.5s ease <?php echo $index * 0.1; ?>s both;">
-                                <td class="px-4 py-4 rounded-l-xl"><?php echo htmlspecialchars($job['service_type']); ?></td>
-                                <td class="px-4 py-4"><?php echo htmlspecialchars($job['duration']); ?></td>
-                                <td class="px-4 py-4"><?php echo htmlspecialchars($job['price']); ?></td>
-                                <td class="px-4 py-4"><?php echo htmlspecialchars($job['scheduled_date']); ?></td>
-                                <td class="px-4 py-4"><?php echo htmlspecialchars($job['scheduled_time']); ?></td>
-                                <td class="px-4 py-4"><?php echo calculateDaysLeft($job['scheduled_date']); ?></td>
-                                <td class="px-4 py-4"><?php echo htmlspecialchars($job['client_name']); ?></td>
-                                <td class="px-4 py-4"><?php echo $job['time_finished'] ? date('Y-m-d H:i', strtotime($job['time_finished'])) : '-'; ?></td>
-                                <td class="px-4 py-4 <?php echo (!empty($job['overtime_hours']) && $job['overtime_hours'] > 0) ? 'text-amber-600 font-medium' : ''; ?>">
-                                    <?php echo (!empty($job['overtime_hours']) && $job['overtime_hours'] > 0) ? number_format($job['overtime_hours'], 2) : '-'; ?>
-                                </td>
+            <div class="flex-1 p-6 overflow-y-auto">
+                <h2 class="text-lg sm:text-xl font-semibold text-gray-800 mb-4">
+                    Current Job Assignments
+                </h2>
+                <div class="overflow-x-auto w-full mb-10">
+                    <table class="min-w-full text-sm text-left text-gray-700 border-separate border-spacing-y-2">
+                        <thead>
+                            <tr class="text-xs text-indigo-800 uppercase tracking-wide">
+                                <th class="px-4 py-3 bg-indigo-100 rounded-l-xl">Service Type</th>
+                                <th class="px-4 py-3 bg-indigo-100">Duration</th>
+                                <th class="px-4 py-3 bg-indigo-100">Price</th>
+                                <th class="px-4 py-3 bg-indigo-100">Scheduled Date</th>
+                                <th class="px-4 py-3 bg-indigo-100">Scheduled Time</th>
+                                <th class="px-4 py-3 bg-indigo-100">Days Left</th>
+                                <th class="px-4 py-3 bg-indigo-100">Client Name</th>
+                                <th class="px-4 py-3 bg-indigo-100">Time Finished</th>
+                                <th class="px-4 py-3 bg-indigo-100">Overtime (hrs)</th>
+                                <th class="px-4 py-3 bg-indigo-100">Action</th>
+                                <th class="px-4 py-3 bg-indigo-100 rounded-r-xl">Evaluation Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Row 1 -->
+                            <tr class="bg-white shadow-sm hover:shadow-md transition duration-200 rounded-xl" style="animation: fadeInUp 0.5s ease 0s both;">
+                                <td class="px-4 py-4 rounded-l-xl">Preventive Maintenance</td>
+                                <td class="px-4 py-4">1</td>
+                                <td class="px-4 py-4">1000.00</td>
+                                <td class="px-4 py-4">2025-05-04</td>
+                                <td class="px-4 py-4">10:16:00</td>
+                                <td class="px-4 py-4">Overdue by 5 day(s)</td>
+                                <td class="px-4 py-4">Celia Foote</td>
+                                <td class="px-4 py-4">2025-05-04 18:00</td>
+                                <td class="px-4 py-4 text-amber-600 font-medium">6.87</td>
                                 <td class="px-4 py-4">
-                                    <?php if ($job['status'] !== 'Completed' && $job['status'] !== 'Completed pending validation'): ?>
-                                        <button class="complete-button outlined-button" onclick="window.location.href='complete.php?id=<?php echo $job['id']; ?>'">
-                                          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <button class="complete-button outlined-button" onclick="window.location.href='complete.php?id=1'">
+                                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <polyline points="20 6 9 17 4 12"></polyline>
-                                          </svg>
-                                          Mark Complete
-                                        </button>
-
-                                    <?php elseif ($job['status'] === 'Completed pending validation'): ?>
-                                        <span class="bg-orange-100 text-orange-700 px-3 py-2 rounded-lg text-xs">Awaiting validation</span>
-                                    <?php else: ?>
-                                        <span class="bg-green-100 text-green-700 px-3 py-2 rounded-lg text-xs">Completed</span>
-                                    <?php endif; ?>
+                                        </svg>
+                                        Mark Complete
+                                    </button>
                                 </td>
-                                <td class="px-4 py-4 rounded-r-xl"><?php echo htmlspecialchars($job['evaluation_status'] ?? '-'); ?></td>
+                                <td class="px-4 py-4 rounded-r-xl">For Evaluation</td>
                             </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
-        <?php endif; ?>
-
-        <?php if (!empty($completed_jobs)): ?>
-        <table class="w-full text-xs sm:text-sm text-left text-gray-700 ...">
-        Completed Services</h2>
-            <div class="w-full overflow-x-auto">
-                <table class="w-full text-sm text-left text-gray-700 border-separate border-spacing-y-2">
-                    <thead>
-                        <tr class="text-xs text-indigo-800 uppercase tracking-wide">
-                            <th class="px-4 py-3 bg-indigo-100 rounded-l-xl">Service Type</th>
-                            <th class="px-4 py-3 bg-indigo-100">Duration</th>
-                            <th class="px-4 py-3 bg-indigo-100">Price</th>
-                            <th class="px-4 py-3 bg-indigo-100">Scheduled Date</th>
-                            <th class="px-4 py-3 bg-indigo-100">Scheduled Time</th>
-                            <th class="px-4 py-3 bg-indigo-100">Days Left</th>
-                            <th class="px-4 py-3 bg-indigo-100">Client Name</th>
-                            <th class="px-4 py-3 bg-indigo-100">Time Finished</th>
-                            <th class="px-4 py-3 bg-indigo-100">Overtime (hrs)</th>
-                            <th class="px-4 py-3 bg-indigo-100 rounded-r-xl">Evaluation Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($completed_jobs as $index => $job): ?>
-                            <tr class="bg-white shadow-sm hover:shadow-md transition duration-200 rounded-xl" style="animation: fadeInUp 0.5s ease <?php echo $index * 0.1; ?>s both;">
-                                <td class="px-4 py-4 rounded-l-xl"><?php echo htmlspecialchars($job['service_type']); ?></td>
-                                <td class="px-4 py-4"><?php echo htmlspecialchars($job['duration']); ?></td>
-                                <td class="px-4 py-4"><?php echo htmlspecialchars($job['price']); ?></td>
-                                <td class="px-4 py-4"><?php echo htmlspecialchars($job['scheduled_date']); ?></td>
-                                <td class="px-4 py-4"><?php echo htmlspecialchars($job['scheduled_time']); ?></td>
-                                <td class="px-4 py-4"><?php echo calculateDaysLeft($job['scheduled_date']); ?></td>
-                                <td class="px-4 py-4"><?php echo htmlspecialchars($job['client_name']); ?></td>
-                                <td class="px-4 py-4"><?php echo $job['time_finished'] ? date('Y-m-d H:i', strtotime($job['time_finished'])) : '-'; ?></td>
-                                <td class="px-4 py-4 <?php echo (!empty($job['overtime_hours']) && $job['overtime_hours'] > 0) ? 'text-amber-600 font-medium' : ''; ?>">
-                                    <?php echo (!empty($job['overtime_hours']) && $job['overtime_hours'] > 0) ? number_format($job['overtime_hours'], 2) : '-'; ?>
+                            
+                            <!-- Row 2 -->
+                            <tr class="bg-white shadow-sm hover:shadow-md transition duration-200 rounded-xl" style="animation: fadeInUp 0.5s ease 0.1s both;">
+                                <td class="px-4 py-4 rounded-l-xl">Repair</td>
+                                <td class="px-4 py-4">1</td>
+                                <td class="px-4 py-4">1000.00</td>
+                                <td class="px-4 py-4">2025-05-09</td>
+                                <td class="px-4 py-4">21:18:00</td>
+                                <td class="px-4 py-4">Overdue by 0 day(s)</td>
+                                <td class="px-4 py-4">Celia Foote</td>
+                                <td class="px-4 py-4">2025-05-04 20:12</td>
+                                <td class="px-4 py-4">-</td>
+                                <td class="px-4 py-4">
+                                    <button class="complete-button outlined-button" onclick="window.location.href='complete.php?id=2'">
+                                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                        Mark Complete
+                                    </button>
                                 </td>
-                                <td class="px-4 py-4 rounded-r-xl"><?php echo htmlspecialchars($job['evaluation_status'] ?? '-'); ?></td>
+                                <td class="px-4 py-4 rounded-r-xl">For Evaluation</td>
                             </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                            
+                            <!-- Row 3 -->
+                            <tr class="bg-white shadow-sm hover:shadow-md transition duration-200 rounded-xl" style="animation: fadeInUp 0.5s ease 0.2s both;">
+                                <td class="px-4 py-4 rounded-l-xl">Repair</td>
+                                <td class="px-4 py-4">1</td>
+                                <td class="px-4 py-4">1000.00</td>
+                                <td class="px-4 py-4">2025-05-07</td>
+                                <td class="px-4 py-4">08:00:00</td>
+                                <td class="px-4 py-4">Overdue by 2 day(s)</td>
+                                <td class="px-4 py-4">Maria Clara Ibarra</td>
+                                <td class="px-4 py-4">-</td>
+                                <td class="px-4 py-4">-</td>
+                                <td class="px-4 py-4">
+                                    <button class="complete-button outlined-button" onclick="window.location.href='complete.php?id=3'">
+                                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                        Mark Complete
+                                    </button>
+                                </td>
+                                <td class="px-4 py-4 rounded-r-xl">-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2 class="text-lg sm:text-xl font-semibold text-gray-800 mb-4">
+                    Completed Services
+                </h2>
+                <div class="w-full overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-700 border-separate border-spacing-y-2">
+                        <thead>
+                            <tr class="text-xs text-indigo-800 uppercase tracking-wide">
+                                <th class="px-4 py-3 bg-indigo-100 rounded-l-xl">Service Type</th>
+                                <th class="px-4 py-3 bg-indigo-100">Duration</th>
+                                <th class="px-4 py-3 bg-indigo-100">Price</th>
+                                <th class="px-4 py-3 bg-indigo-100">Scheduled Date</th>
+                                <th class="px-4 py-3 bg-indigo-100">Scheduled Time</th>
+                                <th class="px-4 py-3 bg-indigo-100">Days Left</th>
+                                <th class="px-4 py-3 bg-indigo-100">Client Name</th>
+                                <th class="px-4 py-3 bg-indigo-100">Time Finished</th>
+                                <th class="px-4 py-3 bg-indigo-100">Overtime (hrs)</th>
+                                <th class="px-4 py-3 bg-indigo-100 rounded-r-xl">Evaluation Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Example completed services would go here -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        <?php endif; ?>
-
-    <?php endif; ?>
-</div>
-
 
             <!-- Right sidebar for closest service -->
             <div class="w-full lg:w-80 bg-gray-50 p-6 border-t lg:border-t-0 lg:border-l border-gray-200">
-                <table class="w-full text-xs sm:text-sm text-left text-gray-700 ...">
-                   <h2> Next Scheduled Service</h2>
-                <?php if ($closest_service): ?>
-                    <div class="bg-white rounded-xl shadow-lg p-4">
-                        <div class="mb-4">
-                            <h3 class="text-lg font-medium text-indigo-600"><?php echo htmlspecialchars($closest_service['service_type']); ?></h3>
-                            <p class="text-sm text-gray-600">Service ID: <?php echo htmlspecialchars($closest_service['id']); ?></p>
+                <h2 class="text-lg font-semibold text-gray-800 mb-4">Next Scheduled Service</h2>
+                <div class="bg-white rounded-xl shadow-lg p-4">
+                    <div class="mb-4">
+                        <h3 class="text-lg font-medium text-indigo-600">Repair</h3>
+                        <p class="text-sm text-gray-600">Service ID: 34</p>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex items-center mb-2">
+                            <svg class="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span class="text-gray-700 font-medium">May 9, 2025</span>
                         </div>
-                        <div class="mb-4">
-                            <div class="flex items-center mb-2">
-                                <svg class="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                </svg>
-                                <span class="text-gray-700 font-medium"><?php echo date('F j, Y', strtotime($closest_service['scheduled_date'])); ?></span>
-                            </div>
-                            <div class="flex items-center mb-2">
-                                <svg class="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                <span class="text-gray-700 font-medium"><?php echo date('h:i A', strtotime($closest_service['scheduled_time'])); ?></span>
-                            </div>
-                            <div class="flex items-center mb-2">
-                                <svg class="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                <span class="text-gray-700 font-medium"><?php echo calculateDaysLeft($closest_service['scheduled_date']); ?></span>
-                            </div>
+                        <div class="flex items-center mb-2">
+                            <svg class="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="text-gray-700 font-medium">09:18 PM</span>
                         </div>
-                        <div class="border-t border-gray-200 pt-3">
-                            <p class="text-sm text-gray-600 mb-1">
-                                <span class="font-medium">Client:</span> <?php echo htmlspecialchars($closest_service['client_name']); ?>
-                            </p>
-                            <p class="text-sm text-gray-600">
-                                <span class="font-medium">Address:</span> <?php echo htmlspecialchars($closest_service['client_address']); ?>
-                            </p>
+                        <div class="flex items-center mb-2">
+                            <svg class="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="text-gray-700 font-medium">Overdue by 0 day(s)</span>
                         </div>
                     </div>
-                <?php else: ?>
-                    <div class="bg-white rounded-xl shadow-lg p-4">
-                        <p class="text-gray-600">No upcoming scheduled services.</p>
+                    <div class="border-t border-gray-200 pt-3">
+                        <p class="text-sm text-gray-600 mb-1">
+                            <span class="font-medium">Client:</span> Celia Foote
+                        </p>
+                        <p class="text-sm text-gray-600">
+                            <span class="font-medium">Address:</span> dsadad
+                        </p>
                     </div>
-                <?php endif; ?>
+                </div>
             </div>
         </div>
     </div>
-
-
-
 
     <script>
         // Auto-dismiss toast notifications after 5 seconds
@@ -637,21 +597,18 @@ Current Job Assignments</h2>
             }, 5000);
         });
 
-          document.querySelectorAll('input[type="file"]').forEach(input => {
-        input.addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const label = input.closest('label');
-                const textElement = label.querySelector('p');
-                if (textElement) {
-                    textElement.innerHTML = `<span class="font-semibold">${file.name}</span> selected`;
+        document.querySelectorAll('input[type="file"]').forEach(input => {
+            input.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const label = input.closest('label');
+                    const textElement = label.querySelector('p');
+                    if (textElement) {
+                        textElement.innerHTML = `<span class="font-semibold">${file.name}</span> selected`;
+                    }
                 }
-            }
+            });
         });
-    });
-
-
-
     </script>
 </body>
 </html>
