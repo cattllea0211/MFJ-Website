@@ -110,6 +110,8 @@ $net_pay = $gross_income - $total_deductions;
 $stmt->close();
 $conn->close();
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -119,10 +121,10 @@ $conn->close();
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1e40af;
-            --primary-light: #3b82f6;
-            --primary-dark: #1e3a8a;
-            --primary-bg: #eff6ff;
+            --primary: #1e7a8a; /* Deeper Teal */
+            --primary-light: #2596aa; /* Lighter Deep Teal */
+            --primary-dark: #18636f; /* Darker Deep Teal */
+            --primary-bg: #e0f2f5; /* Very Light Teal */
             --secondary: #64748b;
             --light: #f8fafc;
             --lighter: #ffffff;
