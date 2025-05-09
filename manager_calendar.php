@@ -808,7 +808,7 @@ $eventsJson = json_encode($events);
             <ul class="space-y-2">
 
                 <li class="sidebar-item">
-                    <a href="/manager_dashboard.php" class="flex items-center px-4 py-3 text-teal-700 bg-teal-50 hover:bg-teal-100 rounded-lg font-medium group">
+                    <a href="manager_dashboard.php" class="flex items-center px-4 py-3 text-teal-700 bg-teal-50 hover:bg-teal-100 rounded-lg font-medium group">
                         <span class="w-8 h-8 flex items-center justify-center bg-teal-600 text-white rounded-lg mr-3 group-hover:bg-teal-700 transition-all shadow-md">
                             <i class="fas fa-calendar-check"></i>
                         </span>
@@ -817,7 +817,7 @@ $eventsJson = json_encode($events);
                 </li>
 
                 <li class="sidebar-item">
-                    <a href="/manager_calendar.php" class="flex items-center px-4 py-3 text-teal-700 bg-teal-50 hover:bg-teal-100 rounded-lg font-medium group">
+                    <a href="manager_calendar.php" class="flex items-center px-4 py-3 text-teal-700 bg-teal-50 hover:bg-teal-100 rounded-lg font-medium group">
                         <span class="w-8 h-8 flex items-center justify-center bg-teal-600 text-white rounded-lg mr-3 group-hover:bg-teal-700 transition-all shadow-md">
                             <i class="fas fa-calendar-alt"></i>
                         </span>
@@ -826,7 +826,7 @@ $eventsJson = json_encode($events);
                 </li>      
                
                 <li class="sidebar-item mt-8">
-                    <a href="/logout.php" class="flex items-center px-4 py-3 text-red-600 hover:bg-red-50 rounded-lg group">
+                    <a href="logout.php" class="flex items-center px-4 py-3 text-red-600 hover:bg-red-50 rounded-lg group">
                         <span class="w-8 h-8 flex items-center justify-center bg-red-100 text-red-600 rounded-lg mr-3 group-hover:bg-red-600 group-hover:text-white transition-all">
                             <i class="fas fa-sign-out-alt"></i>
                         </span>
@@ -862,7 +862,7 @@ $eventsJson = json_encode($events);
                         <li><a class="dropdown-item" href="profile.php"><i class="fas fa-user"></i> Profile</a></li>
                         <li><a class="dropdown-item" href="settings.php"><i class="fas fa-cog"></i> Settings</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item text-danger" href="/logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        <li><a class="dropdown-item text-danger" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                     </ul>
                 </div>
             </nav>
@@ -883,7 +883,7 @@ $eventsJson = json_encode($events);
                             <button id="day-view">Day</button>
                             <button id="list-view">List</button>
                         </div>
-                        <a href="/add_service.php" class="btn btn-primary">
+                        <a href="add_service.php" class="btn btn-primary">
                             <i class="fas fa-plus me-2"></i>Add Service
                         </a>
                     </div>
