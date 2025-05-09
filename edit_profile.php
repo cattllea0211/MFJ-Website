@@ -202,7 +202,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </nav>
 
         <!-- Main Content -->
-        <div class="max-w-9xl profile-container mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
+        <div class="max-w-10xl profile-container mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
             <!-- Page Header -->
             <div class="mb-10">
                 <h1 class="text-3xl font-bold text-slate-800 text-center">Edit Employee Profile</h1>
