@@ -677,7 +677,14 @@ if (!$result) {
                         <span>Appointments</span>
                     </a>
                 </li>
-                
+                <li class="sidebar-item">
+                    <a href="manager_calendar.php" class="flex items-center px-4 py-3 text-teal-700 bg-teal-50 hover:bg-teal-100 rounded-lg font-medium group">
+                        <span class="w-8 h-8 flex items-center justify-center bg-teal-600 text-white rounded-lg mr-3 group-hover:bg-teal-700 transition-all shadow-md">
+                            <i class="fas fa-calendar-alt"></i>
+                        </span>
+                        <span>Calendar</span>
+                    </a>
+                </li> 
                
                 <li class="sidebar-item mt-8">
                     <a href="logout.php" class="flex items-center px-4 py-3 text-red-600 hover:bg-red-50 rounded-lg group">
