@@ -178,34 +178,64 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body class="bg-slate-100 text-slate-800">
     <div class="min-h-screen flex flex-col">
 
-        <!-- Top Navigation Bar -->
-        <nav class="bg-white shadow-sm">
-            <div class="w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between h-16">
-                    <div class="flex items-center">
-                        <a href="employee_profile.php" class="flex items-center text-slate-700 hover:text-slate-900 transition">
-                            <i class="fas fa-arrow-left mr-2"></i>
-                            Back to Profile
-                        </a>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="text-sm font-medium text-slate-500">
-                            <i class="fas fa-building mr-2"></i>
-                            MFJ Company
-                        </div>
-                    </div>
+       <!-- Top Navigation Bar -->
+<nav class="bg-white shadow-md sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <a href="employee_profile.php" class="flex items-center text-slate-700 hover:text-blue-600 transition-colors duration-200 group">
+                    <i class="fas fa-arrow-left mr-2 group-hover:transform group-hover:-translate-x-1 transition-transform duration-200"></i>
+                    <span class="font-medium">Back to Profile</span>
+                </a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="text-sm font-medium text-slate-600 bg-slate-100 py-2 px-3 rounded-full flex items-center">
+                    <i class="fas fa-building mr-2 text-blue-600"></i>
+                    MFJ Company
+                </div>
+                <div class="h-8 w-8 bg-blue-600 rounded-full flex items-center justify-center text-white">
+                    <i class="fas fa-user-alt text-sm"></i>
                 </div>
             </div>
-        </nav>
+        </div>
+    </div>
+</nav>
 
-        <!-- Main Content -->
-        <div class="w-11/12 profile-container mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
+<!-- Main Content -->
+<div class="max-w-4xl profile-container mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
+    <!-- Page Header -->
+    <div class="mb-10">
+        <h1 class="text-3xl font-bold text-slate-800 text-center">Edit Employee Profile</h1>
+        <div class="flex justify-center mt-2">
+            <p class="text-slate-500 max-w-lg text-center">Make changes to your personal information below and save when you're finished.</p>
+        </div>
+        <div class="mt-6 h-1 w-24 bg-blue-600 mx-auto rounded-full"></div>
+    </div>
 
-            <!-- Page Header -->
-            <div class="mb-10 text-center">
-                <h1 class="text-4xl font-bold text-slate-800">Edit Employee Profile</h1>
-                <p class="mt-2 text-lg text-slate-500">Update your personal information</p>
+    <?php if (!empty($message)): ?>
+    <div class="mb-8 w-full animate-fade-in">
+        <div class="<?php echo $messageType === 'success' ? 'bg-green-100 text-green-800 border-green-200' : ($messageType === 'warning' ? 'bg-yellow-100 text-yellow-800 border-yellow-200' : 'bg-red-100 text-red-800 border-red-200'); ?> border px-4 py-3 rounded-lg flex items-center shadow-sm">
+            <i class="<?php echo $messageType === 'success' ? 'fas fa-check-circle' : ($messageType === 'warning' ? 'fas fa-exclamation-triangle' : 'fas fa-times-circle'); ?> mr-3 text-xl"></i>
+            <span class="font-medium"><?php echo $message; ?></span>
+        </div>
+    </div>
+    <?php endif; ?>
+
+    <!-- Profile Form -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-200">
+        <!-- Profile Header -->
+        <div class="bg-gradient-to-r from-blue-600 to-indigo-700 px-8 py-8 sm:px-10 relative overflow-hidden">
+            <div class="absolute inset-0 bg-pattern opacity-10"></div>
+            <div class="relative z-10 flex items-center">
+                <div class="bg-white/20 p-3 rounded-full mr-4">
+                    <i class="fas fa-user-edit text-white text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-white">Update Your Information</h2>
+                    <p class="text-blue-100 mt-1">Only fill out the fields you want to change</p>
+                </div>
             </div>
+        </div>
 
             <?php if (!empty($message)): ?>
             <div class="mb-8 w-full">
