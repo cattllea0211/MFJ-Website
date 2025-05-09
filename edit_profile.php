@@ -238,50 +238,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
 
-    <?php if (!empty($message)): ?>
-    <div class="mb-8 w-full animate-fade-in">
-        <div class="<?php echo $messageType === 'success' ? 'bg-green-100 text-green-800 border-green-200' : ($messageType === 'warning' ? 'bg-yellow-100 text-yellow-800 border-yellow-200' : 'bg-red-100 text-red-800 border-red-200'); ?> border px-4 py-3 rounded-lg flex items-center shadow-sm">
-            <i class="<?php echo $messageType === 'success' ? 'fas fa-check-circle' : ($messageType === 'warning' ? 'fas fa-exclamation-triangle' : 'fas fa-times-circle'); ?> mr-3 text-xl"></i>
-            <span class="font-medium"><?php echo $message; ?></span>
-        </div>
-    </div>
-    <?php endif; ?>
-
-    <!-- Profile Form -->
-    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-200">
-        <!-- Profile Header -->
-        <div class="bg-gradient-to-r from-blue-600 to-indigo-700 px-8 py-8 sm:px-10 relative overflow-hidden">
-            <div class="absolute inset-0 bg-pattern opacity-10"></div>
-            <div class="relative z-10 flex items-center">
-                <div class="bg-white/20 p-3 rounded-full mr-4">
-                    <i class="fas fa-user-edit text-white text-xl"></i>
-                </div>
-                <div>
-                    <h2 class="text-2xl font-bold text-white">Update Your Information</h2>
-                    <p class="text-blue-100 mt-1">Only fill out the fields you want to change</p>
-                </div>
-            </div>
-        </div>
-
-            <?php if (!empty($message)): ?>
-            <div class="mb-8 w-full">
-                <div class="<?php echo $messageType === 'success' ? 'bg-green-100 text-green-800 border-green-200' : ($messageType === 'warning' ? 'bg-yellow-100 text-yellow-800 border-yellow-200' : 'bg-red-100 text-red-800 border-red-200'); ?> border px-4 py-3 rounded-lg flex items-center">
-                    <i class="<?php echo $messageType === 'success' ? 'fas fa-check-circle' : ($messageType === 'warning' ? 'fas fa-exclamation-triangle' : 'fas fa-times-circle'); ?> mr-3 text-xl"></i>
-                    <?php echo $message; ?>
-                </div>
-            </div>
-            <?php endif; ?>
-
-            <!-- Profile Form -->
-            <div class="bg-white rounded-xl shadow-sm overflow-hidden">
-
-                <!-- Profile Header -->
-                <div class="bg-gradient-to-r from-blue-600 to-indigo-700 px-8 py-10 sm:px-12 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-pattern opacity-10"></div>
-                    <h2 class="text-2xl font-bold text-white relative z-10">Update Your Information</h2>
-                    <p class="text-blue-100 mt-2 relative z-10">Update only the fields you want to change</p>
-                </div>
-
                 <!-- Profile Content -->
                 <div class="px-8 py-10 sm:px-12 profile-content relative z-10">
 
