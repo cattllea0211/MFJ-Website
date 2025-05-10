@@ -53,11 +53,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_service'])) {
         }
         
         // Redirect back to the page after deletion
-        header("Location: /MFJ/manage_services.php" . ($success ? "?delete=success" : "?delete=error"));
+        header("Location: /manage_services.php" . ($success ? "?delete=success" : "?delete=error"));
         exit;
     } else {
         // No IDs provided
-        header("Location: /MFJ/manage_services.php?delete=error&message=no_ids");
+        header("Location: /manage_services.php?delete=error&message=no_ids");
         exit;
     }
 }
@@ -1665,39 +1665,39 @@ modal .btn-danger {
             <ul class="nav-menu">
                 <li class="nav-section">Main</li>
                 <li class="nav-item">
-                    <a href="/MFJ/admin_dashboard.php" class="nav-link active">
+                    <a href="/admin_dashboard.php" class="nav-link active">
                         <i class="fas fa-tachometer-alt nav-icon"></i>
                         <span class="nav-text">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-section">Management</li>
                 <li class="nav-item">
-                    <a href="/MFJ/manage_products.php" class="nav-link">
+                    <a href="/manage_products.php" class="nav-link">
                        <i class="fas fa-box nav-icon"></i>
                         <span class="nav-text">Products</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/MFJ/manage_services.php" class="nav-link">
+                    <a href="/manage_services.php" class="nav-link">
                         <i class="fas fa-calendar-alt nav-icon"></i>
                         <span class="nav-text">Appointments</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/MFJ/admin_calendar.php" class="nav-link">
+                    <a href="/admin_calendar.php" class="nav-link">
                         <i class="fas fa-calendar-alt nav-icon"></i>
                         <span class="nav-text">Calendar</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/MFJ/manage_employee.php" class="nav-link">
+                    <a href="/manage_employee.php" class="nav-link">
                         <i class="fas fa-id-card nav-icon"></i>
                         <span class="nav-text">Employees</span>
                     </a>
                 </li>
                 
                 <li class="nav-item" style="margin-top: auto;">
-                    <a href="/MFJ/index.php?logout=true" class="nav-link">
+                    <a href="/index.php?logout=true" class="nav-link">
                         <i class="fas fa-sign-out-alt nav-icon"></i>
                         <span class="nav-text">Logout</span>
                     </a>
@@ -1729,7 +1729,7 @@ modal .btn-danger {
                         <i class="fas fa-search"></i> Search
                     </button>
                 </form>
-                <a href="/MFJ/add_service.php" class="btn btn-primary">
+                <a href="/add_service.php" class="btn btn-primary">
                     <i class="fas fa-plus"></i> Add Service
                 </a>
             </div>
@@ -2722,7 +2722,7 @@ if (clientType.toLowerCase() === 'company') {
         const randomToken = Math.random().toString(36).substring(2, 15);
         
         // Create URL for job assignment with service ID
-        const serviceUrl = `/MFJ/employee_login.php?service_id=${serviceId}&token=${randomToken}`;
+        const serviceUrl = `/employee_login.php?service_id=${serviceId}&token=${randomToken}`;
         
         // Generate QR code
         const qrContainer = document.getElementById('serviceQrCode');
