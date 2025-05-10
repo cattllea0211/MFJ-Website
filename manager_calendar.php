@@ -20,8 +20,8 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['role']) || $_SESSION['rol
 // Database connection
 $host = 'localhost';
 $dbname = 'mfjdb';
-$username = 'root';
-$password = '';
+$username = 'mfj_user';
+$password = 'StrongPassword123!';
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
