@@ -12,7 +12,7 @@ $id = $_SESSION['id'];
 $username = $_SESSION['username']; 
 
 
-$conn = new mysqli('localhost', 'root', '', 'mfjdb');
+$conn = new mysqli('localhost', 'mfj_user', '', 'StrongPassword123!');
 
 
 if ($conn->connect_error) {
