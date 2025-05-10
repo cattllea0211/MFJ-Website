@@ -9,7 +9,7 @@ if (!isset($_SESSION['username'])) {
 
 $username = $_SESSION['username'];
 
-$conn = new mysqli('localhost', 'root', '', 'mfjdb');
+$conn = new mysqli('localhost', 'mfj_user', 'StrongPassword123!', 'mfjdb');
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
