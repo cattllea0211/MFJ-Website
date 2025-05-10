@@ -81,9 +81,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
 
-body {
-background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
-
+            body {
+            background: linear-gradient(to bottom, #cceeff, #e6f7ff);
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
