@@ -1,8 +1,8 @@
 <?php    
 
 
-if (file_exists('/MFJ/logout_session_management.php')) {
-    require_once '/MFJ/logout_session_management.php';
+if (file_exists('/logout_session_management.php')) {
+    require_once '/logout_session_management.php';
 } else {
    
     error_log('Logout session management file not found');
@@ -647,39 +647,39 @@ $totalRevenue = $resultRevenue->num_rows > 0 ? $resultRevenue->fetch_assoc()['to
             <ul class="nav-menu">
                 <li class="nav-section">Main</li>
                 <li class="nav-item">
-                    <a href="/MFJ/admin_dashboard.php" class="nav-link active">
+                    <a href="/admin_dashboard.php" class="nav-link active">
                         <i class="fas fa-tachometer-alt nav-icon"></i>
                         <span class="nav-text">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-section">Management</li>
                 <li class="nav-item">
-                    <a href="/MFJ/manage_products.php" class="nav-link">
+                    <a href="/manage_products.php" class="nav-link">
                        <i class="fas fa-box nav-icon"></i>
                         <span class="nav-text">Products</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/MFJ/manage_services.php" class="nav-link">
+                    <a href="/manage_services.php" class="nav-link">
                         <i class="fas fa-calendar-alt nav-icon"></i>
                         <span class="nav-text">Appointments</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/MFJ/admin_calendar.php" class="nav-link">
+                    <a href="/admin_calendar.php" class="nav-link">
                         <i class="fas fa-calendar-alt nav-icon"></i>
                         <span class="nav-text">Calendar</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/MFJ/manage_employee.php" class="nav-link">
+                    <a href="/manage_employee.php" class="nav-link">
                         <i class="fas fa-id-card nav-icon"></i>
                         <span class="nav-text">Employees</span>
                     </a>
                 </li>
                 
                 <li class="nav-item" style="margin-top: auto;">
-                    <a href="/MFJ/index.php?logout=true" class="nav-link">
+                    <a href="/index.php?logout=true" class="nav-link">
                         <i class="fas fa-sign-out-alt nav-icon"></i>
                         <span class="nav-text">Logout</span>
                     </a>
@@ -710,7 +710,7 @@ $totalRevenue = $resultRevenue->num_rows > 0 ? $resultRevenue->fetch_assoc()['to
                         </div>
                     </div>
                     <div class="stat-footer">
-                        <a href="/MFJ/manage_products.php" style="color: var(--primary); text-decoration: none; font-size: 14px;">
+                        <a href="/manage_products.php" style="color: var(--primary); text-decoration: none; font-size: 14px;">
                             View details <i class="fas fa-arrow-right" style="font-size: 12px;"></i>
                         </a>
                     </div>
@@ -727,7 +727,7 @@ $totalRevenue = $resultRevenue->num_rows > 0 ? $resultRevenue->fetch_assoc()['to
                         </div>
                     </div>
                     <div class="stat-footer">
-                        <a href="/MFJ/manage_services.php" style="color: var(--success); text-decoration: none; font-size: 14px;">
+                        <a href="/manage_services.php" style="color: var(--success); text-decoration: none; font-size: 14px;">
                             View details <i class="fas fa-arrow-right" style="font-size: 12px;"></i>
                         </a>
                     </div>
@@ -744,7 +744,7 @@ $totalRevenue = $resultRevenue->num_rows > 0 ? $resultRevenue->fetch_assoc()['to
                         </div>
                     </div>
                     <div class="stat-footer">
-                        <a href="/MFJ/manage_products.php" style="color: var(--accent); text-decoration: none; font-size: 14px;">
+                        <a href="/manage_products.php" style="color: var(--accent); text-decoration: none; font-size: 14px;">
                             View details <i class="fas fa-arrow-right" style="font-size: 12px;"></i>
                         </a>
                     </div>
@@ -761,7 +761,7 @@ $totalRevenue = $resultRevenue->num_rows > 0 ? $resultRevenue->fetch_assoc()['to
                         </div>
                     </div>
                     <div class="stat-footer">
-                        <a href="/MFJ/manage_services.php" style="color: var(--warning); text-decoration: none; font-size: 14px;">
+                        <a href="/manage_services.php" style="color: var(--warning); text-decoration: none; font-size: 14px;">
                             View details <i class="fas fa-arrow-right" style="font-size: 12px;"></i>
                         </a>
                     </div>
@@ -778,7 +778,7 @@ $totalRevenue = $resultRevenue->num_rows > 0 ? $resultRevenue->fetch_assoc()['to
                         </div>
                     </div>
                     <div class="stat-footer">
-                        <a href="/MFJ/manage_services.php" style="color: var(--danger); text-decoration: none; font-size: 14px;">
+                        <a href="/manage_services.php" style="color: var(--danger); text-decoration: none; font-size: 14px;">
                             View details <i class="fas fa-arrow-right" style="font-size: 12px;"></i>
                         </a>
                     </div>
@@ -795,7 +795,7 @@ $totalRevenue = $resultRevenue->num_rows > 0 ? $resultRevenue->fetch_assoc()['to
                         </div>
                     </div>
                     <div class="stat-footer">
-                        <a href="/MFJ/financial_reports.php" style="color: #8b5cf6; text-decoration: none; font-size: 14px;">
+                        <a href="/financial_reports.php" style="color: #8b5cf6; text-decoration: none; font-size: 14px;">
                             View details <i class="fas fa-arrow-right" style="font-size: 12px;"></i>
                         </a>
                     </div>
