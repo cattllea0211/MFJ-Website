@@ -1,38 +1,65 @@
 <?php 
+// Start session management
 session_start();
 
-if (!isset($_SESSION['id'])) {
- 
+// Add error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Check if user is logged in, redirect if not
+if (!isset($_SESSION['id']) || !isset($_SESSION['username'])) {
     header("Location: employee_login.php");
     exit; 
 }
 
-
+// Get session variables
 $id = $_SESSION['id'];
 $username = $_SESSION['username']; 
 
-
-$conn = new mysqli('localhost', 'mfj_user', 'StrongPassword123!', 'mfjdb');
-
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+// Database connection with error handling
+try {
+    $conn = new mysqli('localhost', 'mfj_user', 'StrongPassword123!', 'mfjdb');
+    
+    // Check connection
+    if ($conn->connect_error) {
+        throw new Exception("Connection failed: " . $conn->connect_error);
+    }
+    
+    // Prepare SQL statement
+    $sql = "SELECT name FROM employees WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    
+    // Check if statement preparation was successful
+    if (!$stmt) {
+        throw new Exception("Statement preparation failed: " . $conn->error);
+    }
+    
+    // Bind parameters and execute
+    $stmt->bind_param("i", $id);
+    
+    // Execute the statement
+    if (!$stmt->execute()) {
+        throw new Exception("Execute failed: " . $stmt->error);
+    }
+    
+    // Bind and fetch result
+    $stmt->bind_result($employee_name);
+    $stmt->fetch();
+    $stmt->close();
+    
+    // Check if employee name was found
+    if (empty($employee_name)) {
+        $employee_name = $username; // Fallback to username if name not found
+    }
+    
+    $conn->close();
+} catch (Exception $e) {
+    // Log the error but show a user-friendly message
+    error_log("Database error in employee_dashboard.php: " . $e->getMessage());
+    
+    // Set a default employee name for display
+    $employee_name = $username; // Use username as fallback
 }
-
-
-$sql = "SELECT name FROM employees WHERE id = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $id); 
-$stmt->execute();
-$stmt->bind_result($employee_name);
-$stmt->fetch();
-$stmt->close();
-
-if (empty($employee_name)) {
-    die("Error: Employee name not found. Please check if the user exists in the database.");
-}
-
-$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -63,16 +90,15 @@ $conn->close();
         }
 
         body {
-background: url('employeebg1.jpg') no-repeat center center;
-background-attachment: fixed;
-    background-size: cover;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
+            background: url('employeebg1.jpg') no-repeat center center;
+            background-attachment: fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
         .container {
             width: 100%;
@@ -145,8 +171,7 @@ background-attachment: fixed;
             align-items: center;
             text-align: center;
             width: 100%;
-min-height: 100px;
-
+            min-height: 100px;
         }
 
         .dashboard-btn:hover {
@@ -288,7 +313,7 @@ min-height: 100px;
         </div>
 
         <div class="footer-container">
-            <a href="index.php" class="logout-link">Logout</a>
+            <a href="logout.php" class="logout-link">Logout</a>
             
             <div class="footer">
                 &copy; 2024 MFJ Air Conditioning Supply & Services. All Rights Reserved.
