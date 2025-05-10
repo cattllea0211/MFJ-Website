@@ -8,8 +8,8 @@ error_reporting(E_ALL);
 
 // Database connection
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = 'mfj_user';
+$password = 'StrongPassword123!';
 $dbname = "mfj_db";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
