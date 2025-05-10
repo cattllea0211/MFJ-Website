@@ -1,8 +1,9 @@
 <?php    
 
 $servername = "localhost";
-$username = "root"; 
-$password = ""; 
+$username = 'mfj_user';
+$password = 'StrongPassword123!';
+
 $dbname = "mfjdb"; 
 
 // Create connection
