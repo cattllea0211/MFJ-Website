@@ -47,36 +47,24 @@ $conn->close();
     <title>Admin Portal</title>
     <style>
         :root {
-            --primary-color: #4361ee;
-            --primary-hover: #3a56d4;
+            --primary-color: #4a6fa5;
+            --primary-hover: #3b5a84;
             --secondary-color: #f8f9fa;
-            --text-color: #212529;
+            --text-color: #2c3e50;
             --light-text: #6c757d;
-            --border-color: #dee2e6;
-            --success-color: #0cce6b;
-            --error-color: #e63946;
-            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
-            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08);
-            --animation-timing: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            --border-color: #e1e5eb;
+            --success-color: #2ecc71;
+            --error-color: #e74c3c;
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-        
-        @keyframes gradientMove {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
         }
         
         @keyframes fadeInUp {
@@ -95,7 +83,7 @@ $conn->close();
                 transform: translateY(0px);
             }
             50% {
-                transform: translateY(-15px);
+                transform: translateY(-10px);
             }
             100% {
                 transform: translateY(0px);
@@ -105,15 +93,15 @@ $conn->close();
         @keyframes pulse {
             0% {
                 transform: scale(1);
-                opacity: 0.8;
+                opacity: 0.7;
             }
             50% {
-                transform: scale(1.1);
-                opacity: 0.5;
+                transform: scale(1.05);
+                opacity: 0.4;
             }
             100% {
                 transform: scale(1);
-                opacity: 0.8;
+                opacity: 0.7;
             }
         }
         
@@ -130,9 +118,7 @@ $conn->close();
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: linear-gradient(135deg, #4158D0, #C850C0, #4361EE);
-            background-size: 300% 300%;
-            animation: gradientMove 15s ease infinite;
+            background-color: var(--bg-color);
         }
         
         .login-container {
@@ -140,10 +126,10 @@ $conn->close();
             max-width: 1000px;
             width: 90%;
             height: 600px;
-            background-color: white;
+            background-color: var(--card-bg);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--card-shadow);
             opacity: 0;
             animation: fadeInUp 0.8s var(--animation-timing) forwards;
             animation-delay: 0.2s;
@@ -151,7 +137,7 @@ $conn->close();
         
         .illustration {
             flex: 1;
-            background: linear-gradient(135deg, #4361ee, #3a0ca3);
+            background: linear-gradient(135deg, #e0eafc, #cfdef3);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -172,7 +158,7 @@ $conn->close();
         .bubble {
             position: absolute;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.25);
             animation: pulse 8s infinite;
         }
         
@@ -278,13 +264,13 @@ $conn->close();
             border-radius: 8px;
             font-size: 0.95rem;
             transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
         }
         
         .input-wrapper input:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+            box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.15);
         }
         
         .login-btn {
@@ -297,7 +283,7 @@ $conn->close();
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
             margin-top: 1rem;
             position: relative;
             overflow: hidden;
@@ -309,7 +295,7 @@ $conn->close();
         .login-btn:hover {
             background-color: var(--primary-hover);
             transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08);
         }
         
         .login-btn:active {
@@ -336,7 +322,7 @@ $conn->close();
         }
         
         .error-message {
-            background-color: rgba(230, 57, 70, 0.08);
+            background-color: rgba(231, 76, 60, 0.08);
             color: var(--error-color);
             padding: 0.875rem;
             border-radius: 8px;
