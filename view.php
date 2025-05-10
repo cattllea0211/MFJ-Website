@@ -1,9 +1,9 @@
 <?php
 // view.php
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "mfj_db";
+$username = "mfj_user";
+$password = "StrongPassword123!";
+$dbname = "mfjdb";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
