@@ -10,8 +10,8 @@ $username = $_SESSION['username'];
 // Database connection
 $host = "localhost";
 $dbname = "mfjdb";
-$username_db = "root";
-$password = "";
+$username_db = "mfj_user";
+$password = "StrongPassword123!";
 
 $conn = new mysqli($host, $username_db, $password, $dbname);
 
