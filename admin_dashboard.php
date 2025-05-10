@@ -9,8 +9,8 @@ if (file_exists('/MFJ/logout_session_management.php')) {
 }
 
 $servername = "localhost";
-$username = "root"; 
-$password = ""; 
+$username = "mfj_user"; 
+$password = "StrongPassword123!"; 
 $dbname = "mfjdb"; 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
