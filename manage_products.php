@@ -663,39 +663,39 @@ $result = $conn->query($sql);
             <ul class="nav-menu">
                 <li class="nav-section">Main</li>
                 <li class="nav-item">
-                    <a href="/MFJ/admin_dashboard.php" class="nav-link active">
+                    <a href="/admin_dashboard.php" class="nav-link active">
                         <i class="fas fa-tachometer-alt nav-icon"></i>
                         <span class="nav-text">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-section">Management</li>
                 <li class="nav-item">
-                    <a href="/MFJ/manage_products.php" class="nav-link">
+                    <a href="/manage_products.php" class="nav-link">
                        <i class="fas fa-box nav-icon"></i>
                         <span class="nav-text">Products</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/MFJ/manage_services.php" class="nav-link">
+                    <a href="/manage_services.php" class="nav-link">
                         <i class="fas fa-calendar-alt nav-icon"></i>
                         <span class="nav-text">Appointments</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/MFJ/admin_calendar.php" class="nav-link">
+                    <a href="/admin_calendar.php" class="nav-link">
                         <i class="fas fa-calendar-alt nav-icon"></i>
                         <span class="nav-text">Calendar</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/MFJ/manage_employee.php" class="nav-link">
+                    <a href="/manage_employee.php" class="nav-link">
                         <i class="fas fa-id-card nav-icon"></i>
                         <span class="nav-text">Employees</span>
                     </a>
                 </li>
                 
                 <li class="nav-item" style="margin-top: auto;">
-                    <a href="/MFJ/index.php?logout=true" class="nav-link">
+                    <a href="/index.php?logout=true" class="nav-link">
                         <i class="fas fa-sign-out-alt nav-icon"></i>
                         <span class="nav-text">Logout</span>
                     </a>
@@ -717,10 +717,10 @@ $result = $conn->query($sql);
                     <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
                 </div>
                 <div class="btn-group">
-                    <button class="btn btn-secondary" onclick="window.location.href='/MFJ/inventory.php'">
+                    <button class="btn btn-secondary" onclick="window.location.href='/inventory.php'">
                         <i class="fas fa-warehouse"></i> Inventory
                     </button>
-                    <button class="btn btn-primary" onclick="window.location.href='/MFJ/add_product.php'">
+                    <button class="btn btn-primary" onclick="window.location.href='/add_product.php'">
                         <i class="fas fa-plus-circle"></i> Add Product
                     </button>
                 </div>
@@ -785,7 +785,7 @@ $result = $conn->query($sql);
                         echo "</div>";
                         echo "<p class='product-description'>{$product['description']}</p>";
                         echo "<div class='product-actions'>";
-                        echo "<a href='/MFJ/add_product.php?id={$product['id']}' class='btn btn-secondary'><i class='fas fa-edit'></i> Edit</a>";
+                        echo "<a href='/add_product.php?id={$product['id']}' class='btn btn-secondary'><i class='fas fa-edit'></i> Edit</a>";
                         echo "<button class='btn btn-danger' onclick='deleteProduct({$product['id']})'><i class='fas fa-trash-alt'></i> Delete</button>";
                         echo "</div>";
                         echo "</div>";
@@ -840,7 +840,7 @@ $result = $conn->query($sql);
 
         function deleteProduct(productId) {
             if (confirm("Are you sure you want to delete this product?")) {
-                fetch(`/MFJ/delete_product.php?id=${productId}`)
+                fetch(`/delete_product.php?id=${productId}`)
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
