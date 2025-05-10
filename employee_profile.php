@@ -13,8 +13,8 @@ $username = $_SESSION['username']; // (optional use)
 // Database connection (PDO)
 $host = 'localhost';
 $dbname = 'mfjdb';   // <-- your database name
-$db_username = 'root'; // <-- your database username
-$db_password = '';     // <-- your database password
+$db_username = 'mfj_user'; // <-- your database username
+$db_password = 'StrongPassword123!';     // <-- your database password
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $db_username, $db_password);
