@@ -3,8 +3,8 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = 'mfj_user';
+$password = 'StrongPassword123!';
 $dbname = "mfjdb";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
