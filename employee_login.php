@@ -3,8 +3,9 @@ session_start();
 
 $host = 'localhost';
 $dbname = 'mfjdb';
-$username = 'root';
-$password = '';
+$username = 'mfj_user';
+$password = 'StrongPassword123!';
+
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
